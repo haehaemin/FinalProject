@@ -221,6 +221,7 @@ There will additional term, dragged down soruce term $J$ by $\delta/\delta\phi(p
 Now the second integral is the integral of functional derivative, same as a boundary term, goes to zero. Hence the implenting the cutoff function on the propagator, if the effective lagrangian changes according to the \ref{eq:polchinski}, the physics described by lagrangian is equivalently same.
 
 \section{Diagrammatic expression of RG}
+\label{sec3}
 One might suspicious about why all this things happen. To things to be more clear, it is helpful to understand how wilsonian RG is performed in perturbative sense, using friendly tool,
 the Feynmann Diagram.
 Let's start again with the scalar theory. We can write the effective action as
@@ -435,7 +436,7 @@ We won't follow all the mathematical details of his proof here, but we'll conten
 	\label{thm:renormalizability}
 	For a $\tilde{\mathcal L}(\mu,\lambda^\mu,\Lambda)$, it has a limit of $\Lambda\rightarrow\infty$.
 \end{theorem}
-To illustrate, let's consider an example where you don't have a limit. This is the Polchinsky's toy model we saw \ref{sec2}, and similar to what we did earlier, we're going to linearize it, assuming beta is small, and build an expression.
+To illustrate, let's consider an example where you don't have a limit. This is the Polchinsky's toy model we saw in Section \ref{sec2}, and similar to what we did earlier, we're going to linearize it, assuming beta is small, and build an expression.
 \begin{align}
 	\begin{split}
 		\frac{d}{d\ln \mu}\begin{pmatrix}
@@ -448,10 +449,10 @@ To illustrate, let's consider an example where you don't have a limit. This is t
 	\end{split}
 \end{align}
 
-$M$ Each component of M represents a derivative of beta. Assuming each component is very small, we can now diagonalize the matrix and solve the differential equation, You should get $\lambda_4(\mu)~\lambda(\mu)\frac{\Lambda^2}{\mu^2}$ as a result.
+Each component of $M$ represents a derivative of beta. Assuming each component is very small, we can now diagonalize the matrix and solve the differential equation, You should get $\lambda_4(\mu)\sim~\lambda(\mu)\frac{\Lambda^2}{\mu^2}$ as a result.
 Therefore, there is no way to leave $\lambda_6$ non-zero and eliminate the cutoff dependency of $\lambda_4$. Technically, this means no $\Lambda\rightarrow\infty$ limits.
 
-Someone might be very suspicious of the $\ㅣambda\rightarrow\infty$ limit. This is because, as we know, the mass of a scalar particle has a shift corresponding to the ultraviolet cutoff $\Lambda^2$ and has no continuum limit.
+Someone might be very suspicious of the $\Lambda\rightarrow\infty$ limit. This is because, as we know, the mass of a scalar particle has a shift corresponding to the ultraviolet cutoff $\Lambda^2$ and has no continuum limit.
 %But before we do that, it might be helpful to finish the conclusion of Section 4.2.
 %\subsection{Wilson's famous $\epsilon = 4-d$ expansion around the fixed point}
 
@@ -474,6 +475,99 @@ If so, the “renormalized” parameters we normally use are no different than t
 Each is no different than the corresponding quantities for the two-point, kinetic, and four-point terms back in real space.
 %//TODO add brief description on renoramalizability
 
-\section{Callan-Symmanzik}
+\section{Wilson, Callan-Symmanzik, Conclusion}
+We're almost to the conclusion. First, let's finish the discussion we had in Section \ref{sec3}.
+Let's remind ourselves of how the terms have changed. 
+\begin{align}
+\begin{split}
+	\frac{1}{2}m^2\rightarrow\frac{1}{2} m^2+\frac{6g_4}{(2\pi)^4}\int^\Lambda_\mu\frac{d^4k}{m^2+k^2}\\
+	g_4\rightarrow g_4-36\frac{g_4^2}{(2\pi)^d }\int^\Lambda_\mu\frac{d^4k}{(m^2+k^2)^2}\\
+\end{split}	
+\end{align}
+The integral here is particularly easy to compute in the normal case where $\mu$ and $\Lambda$ much more larger than $m$. Rather than compute it right away, we'll replace it with a generalized dimension d. This is not for any particular purpose, but rather to introduce a famous concept later. So, the above expression becomes
+\begin{align}
+	\begin{split}
+		\frac{1}{2}m^2\rightarrow\frac{1}{2} m^2+\frac{6g_4}{(2\pi)^d}\int^\Lambda_\mu dr\frac{S_{d-1}r^{d-1}}{m^2+r^2}\\
+		g_4\rightarrow g_4-36\frac{g_4^2}{(2\pi)^d}\int^\Lambda_\mu dr\frac{S_{d-1}r^{d-1}}{(m^2+r^2)^2}\\
+	\end{split}	
+\end{align}
+Here we observe the quadratic shift of the mass term as we know it (at $d=4$).
+
+
+Then, we'll add a few more steps that we didn't do in class.
+First, rescaling of momentum. This is a coordinate transformation rather than a process with much physical significance, but given that the spirit of coarse-graining is to observe how physics looks different at different scales,
+To compare two theories at different scales, we want to equalize the momentum cutoff (rescaling might be a better way to put it - think of observing the theory as you zoom out further and further).
+This can be understood as a transformation of the momentum $p^\prime=\frac{\Lambda}{\mu}p$. 
+If so, it would look like this
+\begin{align}
+	\begin{split}
+		\frac{1}{2}m^2\rightarrow\bigg(\frac{\Lambda}{\mu}\bigg)^{-d}\bigg[\frac{1}{2} m^2+\frac{6g_4}{(2\pi)^d}\int^\Lambda_\mu dr\frac{S_{d-1}r^{d-1}}{m^2+r^2}\bigg]\\
+		g_4\rightarrow\bigg(\frac{\Lambda}{\mu}\bigg)^{-3d}\bigg[g_4-36\frac{g_4^2}{(2\pi)^d}\int^\Lambda_\mu dr\frac{S_{d-1}r^{d-1}}{(m^2+r^2)^2}\bigg]\\
+	\end{split}	
+\end{align}
+Where the $S_{d-1}$ is the area of the surface area of the unit $n-1$ sphere. Each number comes from the integral measure that each term carries (You might wonder why it's not $-4d$ for a 4-point function, but it's one less due to the delta-function integral).
+Unfortunately, that's not the end of the story. Since all of this changes the coefficients of the kinetic term, we need to scale the field variables canonically. This can be done with $\phi_<=\zeta\phi^\prime$
+in the process. This is why we call this process renormalize. The coefficient of the kinetic term is will changed by
+\begin{align}
+	\begin{split}
+		\frac{1}{2} &\rightarrow \frac{1}{2}\times\zeta^{2}(\text{from fields})\times
+		\\&\bigg(\frac{\Lambda}{\mu}\bigg)^{-d}(\text{from integral measure})\times\bigg(\frac{\Lambda}{\mu}\bigg)^{-2}(\text{from momentum})
+	\end{split}
+\end{align}
+thus $\zeta=(\Lambda/\mu)^{1+\frac{d}{2}}$. After rescaling, the final result will be
+\begin{align}
+	\begin{split}
+		\frac{1}{2}m^2\rightarrow\bigg(\frac{\Lambda}{\mu}\bigg)^{2}\bigg[\frac{1}{2} m^2+\frac{6g_4}{(2\pi)^d}\int^\Lambda_\mu dr\frac{S_{d-1}r^{d-1}}{m^2+r^2}\bigg]\\
+		g_4\rightarrow\bigg(\frac{\Lambda}{\mu}\bigg)^{4-d}\bigg[g_4-36\frac{g_4^2}{(2\pi)^d}\int^\Lambda_\mu dr\frac{S_{d-1}r^{d-1}}{(m^2+r^2)^2}\bigg]\\
+	\end{split}	
+\end{align}
+
+Now let's create a differential equation for this expression. Substituting the scale $\mu = \Lambda(1-\delta t)$ in the neighborhood of $\Lambda$ and expanding the expression, we get
+
+\begin{align}
+	\begin{split}
+		\frac{1}{2}m^2\rightarrow(1+2\delta t)\bigg[\frac{1}{2} m^2+\frac{6g_4}{(2\pi)^d}\frac{S_{d-1}\Lambda^{d}}{m^2+\Lambda^2}\delta t\bigg]\\
+		g_4\rightarrow(1+(4-d)\delta t)\bigg[g_4-36\frac{g_4^2}{(2\pi)^d} \frac{S_{d-1}\Lambda^{d}}{(m^2+\Lambda^2)^2}\delta t\bigg]\\
+	\end{split}	
+\end{align}
+Thus
+\begin{align}
+	\begin{split}
+&\frac{dm^2}{dt}=2m^2+\frac{12g_4}{(2\pi)^4}\frac{S_{d-1}\Lambda^{d}}{m^2+\Lambda^2}\\
+&\frac{dg_4}{dt}=(4-d)g_4-36\frac{g_4^2}{(2\pi)^4}\frac{S_{d-1}\Lambda^{d}}{(m^2+\Lambda^2)^2}
+	\end{split}	
+\end{align}
+We use a parameter $t$ for similarity to the “flow” of a real fluid. We can do things a little differently than Polchinski and keep track of where we're going in parameter space as we renormalize. Of special interest, of course, is the fixed point.
+We can immediately identify some fixed points.
+First, the trivial one, $m^2=g_4=0$. This is the called \textbf{Gaussian fixed point}, where the theory is free.
+Second, make the right side of the below equation zero. Means that,
+\begin{equation}
+	\label{eq:epsilonexpansion}
+	g_4=(4-d)\frac{(m^2+\Lambda^2)^2}{36S_{d-1}\Lambda^d}
+\end{equation}
+Since we are staying in a perturbation scheme with a very small interaction term, $g_4$ should not be large.  This is where Wilson's famous \textbf{$\epsilon=4-d$ expansion} comes in.
+Now let's talk about more general statements. Let's say your action is organized like this
+\begin{equation}
+	\mathcal L = \frac{1}{2}m^2\phi^2 + \frac{1}{2}(\partial\phi)^2 +\sum_{n,m}\mathcal O((\partial \phi)^n,\phi^m)
+\end{equation}
+Then the scaling law would probably be something like this, roughly 
+\begin{equation}
+	\mathcal L = \bigg(\frac{\Lambda}{\mu}\bigg)^2\frac{1}{2}m^2\phi^2 +\frac{1}{2}(\partial\phi)^2 +\sum_{n,m}\bigg(\frac{\Lambda}{\mu}\bigg)^{(-d-n)+(n+m)(1+d/2)}\mathcal O((\partial \phi)^n,\phi^m)
+\end{equation}
+After the above renormalization, we find that, as expected, all terms of irrelevant order near the fixed point become smaller and smaller as we renormalize. Although we are not currently considering corse-grained terms,
+In any case, our prediction is accurate to roughly the order of $\epsilon$. In this case, all we can say is that the irrelevant terms generated by renormalization near the fixed point will quickly diminish.
+In other words, the space of possible Lagrangians quickly shrinks to a subspace consisting of only relevant terms.
+
+Thus, even though the Wilsonian RG generates a large number of higher-order terms, in the case of both Lagrangians and correlation functions, we can assume that these functions consist of only a few parameters.
+Just as we required for the partition function at the beginning, the n-point correlation function should be independent of scale $\mu$. This is $\frac{dG^{n}}{d\ln\mu}=0$ in one line. What would change for this?
+A few relevant and marginal parameters, and $\zeta$ introduced for canonical normalization. So it would look like this
+\begin{align}
+	\begin{split}
+		\frac{dG^{n}}{d\ln\mu}&=0\\
+		&=\bigg(\frac{\partial}{\partial\ln\mu}+\frac{\partial m}{\partial\ln\mu}\frac{\partial }{\partial m}+\frac{\partial \lambda}{\partial \ln \mu}\frac{\partial }{\partial\lambda}\bigg)\zeta^n G^n\\
+		&\rightarrow\bigg(n\frac{\partial \ln\zeta}{\partial\ln\mu}+\frac{\partial}{\partial\ln\mu}+\frac{\partial m}{\partial\ln\mu}\frac{\partial }{\partial m}+\beta(\lambda)\frac{\partial }{\partial\lambda}\bigg)G^n=0
+	\end{split}
+\end{align}
+This is famous Callan-Symanzik equation. 
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.29)  1 JUN 2024 23:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.29)  3 JUN 2024 15:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -392,45 +392,52 @@ Package pdftex.def Info: Fig1.jpeg  used on input line 127.
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 317.
+(amsmath)                 on input line 326.
 
 <Fig2.jpeg, id=48, 1445.4pt x 1927.2pt>
 File: Fig2.jpeg Graphic file (type jpg)
 <use Fig2.jpeg>
-Package pdftex.def Info: Fig2.jpeg  used on input line 321.
+Package pdftex.def Info: Fig2.jpeg  used on input line 330.
 (pdftex.def)             Requested size: 172.51202pt x 229.98953pt.
-[11 <./Fig2.jpeg>]
-<Fig3.jpeg, id=54, 1927.2pt x 1445.4pt>
+<Fig3.jpeg, id=49, 1927.2pt x 1445.4pt>
 File: Fig3.jpeg Graphic file (type jpg)
 <use Fig3.jpeg>
-Package pdftex.def Info: Fig3.jpeg  used on input line 333.
+Package pdftex.def Info: Fig3.jpeg  used on input line 342.
 (pdftex.def)             Requested size: 172.51202pt x 129.37462pt.
- [12 <./Fig3.jpeg>]
+[11] [12 <./Fig2.jpeg> <./Fig3.jpeg>]
 <Fig4.jpeg, id=58, 1927.2pt x 1445.4pt>
 File: Fig4.jpeg Graphic file (type jpg)
 <use Fig4.jpeg>
-Package pdftex.def Info: Fig4.jpeg  used on input line 363.
+Package pdftex.def Info: Fig4.jpeg  used on input line 372.
 (pdftex.def)             Requested size: 172.51202pt x 129.37462pt.
- [13 <./Fig4.jpeg>] [14] [15]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13] [14 <./Fig4.jpeg>] [15]
 <Fig5.jpeg, id=70, 1927.2pt x 1445.4pt>
 File: Fig5.jpeg Graphic file (type jpg)
 <use Fig5.jpeg>
-Package pdftex.def Info: Fig5.jpeg  used on input line 422.
+Package pdftex.def Info: Fig5.jpeg  used on input line 431.
 (pdftex.def)             Requested size: 258.77463pt x 194.06194pt.
- [16 <./Fig5.jpeg>] [17] [18] [19] [20] [21] (./Final.aux) ) 
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[16] [17 <./Fig5.jpeg>] [18] [19] [20] [21] [22] [23] (./Final.aux) ) 
 Here is how much of TeX's memory you used:
- 4769 strings out of 478268
- 76840 string characters out of 5846347
- 379604 words of memory out of 5000000
- 22870 multiletter control sequences out of 15000+600000
+ 4771 strings out of 478268
+ 76876 string characters out of 5846347
+ 378628 words of memory out of 5000000
+ 22872 multiletter control sequences out of 15000+600000
  481597 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,25n,76p,536b,241s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Final.pdf (21 pages, 2244340 bytes).
+Output written on Final.pdf (23 pages, 2249297 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
+ 169 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

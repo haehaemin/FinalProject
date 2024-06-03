@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1717253734 "/Users/yeonjoon/Documents/FinalProject/Final.tex" "Final.pdf" "Final" 1717253736
-  "/Users/yeonjoon/Documents/FinalProject/Final.tex" 1717253734 46415 f848320aeaea12c0fe6d3169cddd4f2b ""
+["pdflatex"] 1717395477 "/Users/yeonjoon/Documents/FinalProject/Final.tex" "Final.pdf" "Final" 1717395478
+  "/Users/yeonjoon/Documents/FinalProject/Final.tex" 1717395477 49435 335ff727a30ffdf12238aff39e1f9d45 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -102,8 +102,8 @@
   "Fig3.jpeg" 1717119837 346960 9f7de9a750cd2d0b721cc43a8d0100f9 ""
   "Fig4.jpeg" 1717119837 431688 577d1e16a7ab2cabad5666ccc9599fbb ""
   "Fig5.jpeg" 1717119837 373899 595e85df38b67456e23f56a7992ee560 ""
-  "Final.aux" 1717253735 2831 097f021d6b44a7d322a12099bd2d462e "pdflatex"
-  "Final.tex" 1717253734 46415 f848320aeaea12c0fe6d3169cddd4f2b ""
+  "Final.aux" 1717395478 2911 104736294292e75382a18823d242e1a4 "pdflatex"
+  "Final.tex" 1717395477 49435 335ff727a30ffdf12238aff39e1f9d45 ""
   "ouparticle.cls" 1717119837 7215 2e1f2a3c38b26365960ac0c93cc370cb ""
   (generated)
   "Final.aux"

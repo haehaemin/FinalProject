@@ -167,7 +167,7 @@ means that if the bare lagrangian at scale $\Lambda$ is in fact at different sca
 It is also worth that how Polchinski implement the renormalization, integration of partial mode, differentely from Heat Kernel method that we used in class.
 First, write the usual path integral with the source term,
 \begin{equation}
-	Z[j]=\int\mathcal D \phi e^{-S_E+J\circ\phi}
+	\mathcal Z[j]=\int\mathcal D \phi e^{-S_E+J\circ\phi}
 \end{equation}
 Where the action $S_E$ is written in momentum basis with the interaction lagrangian
 \begin{equation}
@@ -201,10 +201,19 @@ But after check the shape of the function, maybe there is the mistake here. This
 Partition function should be independent of cutoff $\mu$, thus following condition should be satisfied
 \begin{align}\begin{split}
 	\label{eq:floweq}
-	&\frac{d}{d\ln\mu}Z[j]=0\\
+	&\frac{d}{d\ln\mu}\mathcal Z[j]=0\\
 	&=\int\mathcal D \phi e^{-S_E+J\circ\phi}\bigg[-\frac{1}{2}\phi(p)\bigg(\frac{1}{(p^2+m^2)}\bigg)^{-1}\phi(-p)\frac{\partial K^{-1}}{\partial\ln \mu}+\frac{d \mathcal L}{d\ln \mu}\bigg]
 \end{split}\end{align}
-Where subscript int on interaction lagrangian is omitted for simplicity. We'll not denote this subscript further. Suppose following Polchinski's ansatz
+Where subscript int on interaction lagrangian is omitted for simplicity. We'll not denote this subscript further. 
+
+We can already feel the traces of the Callan-symmanzik equation here. 
+Let's simply replace the full differential with a partial differential, and let the parameters describing the Lagrangian be described by $\lambda_i$. 
+\begin{equation}
+\bigg(\frac{\partial }{\partial \ln \mu}+\frac{\partial \lambda_i}{\partial \ln \mu}\frac{\partial}{\partial \lambda_i}\bigg)\mathcal Z=0
+\end{equation}
+It's slightly different in subject and form from the more commonly recognized Callan-Symanzik, but you can see the connection.
+
+Suppose following Polchinski's ansatz
 \begin{equation}
 	\label{eq:polchinski}
 	\frac{d\mathcal L}{d\ln\mu}=-\frac{1}{2}\int d^4p\frac{(2\pi)^4}{p^2+m^2}\frac{\partial K}{\partial \ln\mu}\bigg[\frac{\delta \mathcal L}{\delta \phi(-p)}\frac{\delta \mathcal L}{\delta \phi(p)}+\frac{\delta^2 \mathcal L}{\delta \phi(p)\delta \phi(-p)}\bigg]
@@ -438,6 +447,7 @@ We won't follow all the mathematical details of his proof here, but we'll conten
 \end{theorem}
 To illustrate, let's consider an example where you don't have a limit. This is the Polchinsky's toy model we saw in Section \ref{sec2}, and similar to what we did earlier, we're going to linearize it, assuming beta is small, and build an expression.
 \begin{align}
+	\label{eq:nolimittoyexample}
 	\begin{split}
 		\frac{d}{d\ln \mu}\begin{pmatrix}
 			\lambda_4\\\lambda_6
@@ -568,18 +578,39 @@ Let's come back to the usual “renormalization” discussion again. Usually whe
 \end{enumerate}
 
 Now, if we return to Wilson's perspective, the puzzle fits together again. In all the renormalization processes we've done so far, we already had a certain cutoff $\Lambda$ in the theory (2. This is the role of the regulator), and performing a momentum shell integral up to $\mu$ made additional changes to each coefficient (1. This is the role of the multiplicative factor).
+And if the infinities cannot be properly removed by sending the regulator's cutoff to infinity, these terms were called “non-renormalizable”.
 
+But in hindsight, and from Wilson's point of view, this declaration was made because when we started with the bare Lagrangian and went to the effective Lagrangian, there was a difference in magnitude proportional to some order in $\Lambda$ between the irrelevant and irrelevant terms, and this situation is easily described in all the discussions we have been having and in particular in \ref{eq:nolimittoyexample}.
+In the end, saying “not renormalizable” was nothing more than saying that there is no Lagrangian in the UV that gives us the type of Lagrangian we want in the IR.
 
+Now let's try to reconstruct the Callan-Symanzik equation from this perspective. The lesson from Wilsonian RG is that neither physically nor mathematically  
+\begin{equation}
+	\label{eq:ourlesson}
+	\frac{d \mathcal Z}{d \ln \mu} = 0
+\end{equation}
+Now let's write this as a Multiplicative factor. We now know that this is a term that describes the additional Effective action generated during RG. Polchinski's approach was to fix the coefficient of the Kinetic term to 1/2 and include the additional terms generated during RG as $\mathcal L_\text{int}$, but there is nothing mathematically different between the two descriptions.
+Let's follow the usual convention and write this as $\phi(x;\mu)=Z^{1/2}_\phi\phi(x;\Lambda)$. An $n$-point correlation function is no different than plugging in $n$ field variables and doing a path integral. So the conclusion of expression \ref{eq:ourlesson} would look like this
 
-Just as we required for the partition function at the beginning, the n-point correlation function should be independent of scale $\mu$. This is $\frac{dG^{n}}{d\ln\mu}=0$ in one line. What would change for this?
-A few relevant and marginal parameters, and $Z_\phi$ introduced for canonical normalization. So, from the perspective of a “bare” action, it would look like this.
 \begin{align}
 	\begin{split}
-		\frac{dG^{n}}{d\ln\mu}&=0\\
-		&=\bigg(\frac{\partial}{\partial\ln\mu}+\frac{\partial m}{\partial\ln\mu}\frac{\partial }{\partial m}+\frac{\partial \lambda}{\partial \ln \mu}\frac{\partial }{\partial\lambda}\bigg)Z_\phi^n G^n\\
-		&\rightarrow\bigg(n\frac{\partial \ln Z_\phi}{\partial\ln\mu}+\frac{\partial}{\partial\ln\mu}+\frac{\partial m}{\partial\ln\mu}\frac{\partial }{\partial m}+\beta(\lambda)\frac{\partial }{\partial\lambda}\bigg)G^n=0
+		\langle\phi(x_1;\Lambda)...\phi(x_n;\Lambda)\rangle=\frac{\int \mathcal D\phi(x;\Lambda)[\phi(x_1;\Lambda)...\phi(x_n;\Lambda)]e^{-S[\phi(x;\Lambda),\Lambda]}}{\int \mathcal D\phi e^{-S[\phi(x;\Lambda),\Lambda]}}\\
+		=\frac{\int \mathcal D\phi_<[\phi(x_1;\Lambda)...\phi(x_n;\Lambda)]e^{-S[Z^{1/2}_\phi\phi(x;\Lambda),\mu]}}{\int \mathcal D\phi_< e^{-S[Z^{1/2}_\phi\phi(x;\Lambda),\mu]}}\\
+		=Z^{-n/2}_\phi\langle\phi(x_1;\mu)...\phi(x_n;\mu)\rangle
 	\end{split}
 \end{align}
-This is famous Callan-Symanzik equation. 
+if the correlation function is constructed with lower enregy field. Consider infinitesimal change of $\mu+\delta\mu$. Then
+\begin{equation}
+	Z^{-n/2}_\phi(\mu)\langle\phi(x_1;\mu)...\phi(x_n;\mu)\rangle=Z^{-n/2}_\phi(\mu+\delta \mu)\langle\phi(x_1;\mu+\delta \mu)...\phi(x_n;\mu+\delta \mu)\rangle
+\end{equation}
+Define anomalous dimension as $\gamma_\phi=-\frac{d\ln Z_\phi^{1/2}}{d\ln \mu}$. 
+This is called \textbf{anomalous} because this is responsible to kind a failure of Wald identity of scale transformation in case of correlation function.
+Subtract the LHS from the RHS, then one get the
+\begin{equation}
+	\bigg(\frac{\partial}{\partial \ln\mu} + \beta_i\frac{\partial \lambda_i}{\partial \ln\mu}  + n\lambda_\phi\bigg)\langle\phi(x_1;\mu)...\phi(x_n;\mu)\rangle=0
+\end{equation}
+And according to Polchinski's proof, the $\lambda_i$ required in this expression is exactly the same as the number of non-irrelevant operators if you are at the sufficient IR side. 
+
+It's not hard to recognize that this is our famous Callan-Symanzik equation.
+And the equation merely describes how the parameters of the equation need to be adjusted in order for our physics to be unaffected by the cutoff $\mu$ as suggested by Wilson. 
 
 \end{document}

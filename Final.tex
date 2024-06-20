@@ -52,7 +52,7 @@ while $n-$point correlation function is defined by path integral. from now, we w
 \langle 0|T\phi(x_1)...\phi(x_n)|0\rangle = \frac{1}{Z[\mathbf{j}]}\frac{\delta^{2n}}{\delta(x_1)...\delta(x_n)}\int [\mathcal{D}\phi] e^{-S_E[\phi]+\mathbf{j}\cdot\phi}\bigg\rvert_{\mathbf{j}=0}
 \end{split}\end{align}
 So the new question is, how does the $n$-point correlation function change when we change the energy scale? In other words, how does it change under Wilsonian RG?
-This may help the more intuitive picture of corse-graining as $n$-point correlation that function directly related to scattering amplitude, particle experiment, or to exaggerate a bit, everyday life. this work is done by Joseph Polchinski. 
+This may help the more intuitive picture of corse-graining as $n$-point correlation that function directly related to scattering amplitude, particle experiments.
 
 \section{Renormalization Group Flow}
 \label{sec2}
@@ -72,7 +72,7 @@ Now Let's rephrase the term ``Renormalizability" in this picture. lagrangian $\m
 But non-renormalizable term, says, ``irrelevant'' term, suppressed by the inverse power of bare cutoff $\Lambda$.
 Therefore infinite-dimensional mainfold tends to shrinks to the finite-dimensional manifold that which has the dimension of number of relevent and marginal terms.
 Hence whether the theory is started from the point of the parameter space, it will attracted to renormalizable manifold at the IR side. What Polchinski shows is that for our effective lagrangian $\mathcal{L}_\mu$ in renormalizable manifold in IR side,
-there is a starting point for a given $\Lambda_0$ that flow starts, in rigourous manner, and also for the $n$-point correlation function.
+and also there is a starting point for a given $\Lambda_0$ that flow starts, in rigourous manner, and also for the $n$-point correlation function.
 
 Let's start with Polchinski's toy argument. For our regular $d=4$ spacetime with scalar theory with 4 and 6-point interaction, says
 \begin{equation}
@@ -206,7 +206,7 @@ Partition function should be independent of cutoff $\mu$, thus following conditi
 \end{split}\end{align}
 Where subscript int on interaction lagrangian is omitted for simplicity. We'll not denote this subscript further. 
 
-We can already feel the traces of the Callan-symmanzik equation here. 
+We can already feel the traces of the Callan-Symanzik equation here. 
 Let's simply replace the full differential with a partial differential, and let the parameters describing the Lagrangian be described by $\lambda_i$. 
 \begin{equation}
 \bigg(\frac{\partial }{\partial \ln \mu}+\frac{\partial \lambda_i}{\partial \ln \mu}\frac{\partial}{\partial \lambda_i}\bigg)\mathcal Z=0
@@ -429,8 +429,15 @@ The meaning of the inner term $[\cdot]$ is now clear: each functional derivative
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.6\textwidth]{Fig5.jpeg}
-	\caption{The diagrammatic expression of Polchinski's flow equation.}
+	\caption{The diagrammatic expression of Polchinski's flow equation. Two vertex forming tree level diagram.}
 	\label{fig:polchinski}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Fig6.jpeg}
+	\caption{One vertex forming loop diagram.}
+	\label{fig:polchinski2}
 \end{figure}
 Now it's clear to diagram the inside of the term in $[\cdot]$. The first term picks a set of vertices in the interaction Lagrangian and picks a bridge, each of which is connected to the others to form a new vertex. The next term, on the other hand, picks two bridges from a single vertex. The two legs are connected to form a loop.
 
@@ -492,7 +499,7 @@ Let's remind ourselves of how the terms have changed.
 \begin{align}
 \begin{split}
 	\frac{1}{2}m^2\rightarrow\frac{1}{2} m^2+\frac{6g_4}{(2\pi)^4}\int^\Lambda_\mu\frac{d^4k}{m^2+k^2}\\
-	g_4\rightarrow g_4-36\frac{g_4^2}{(2\pi)^d }\int^\Lambda_\mu\frac{d^4k}{(m^2+k^2)^2}\\
+	g_4\rightarrow g_4-36\frac{g_4^2}{(2\pi)^4 }\int^\Lambda_\mu\frac{d^4k}{(m^2+k^2)^2}\\
 \end{split}	
 \end{align}
 The integral here is particularly easy to compute in the normal case where $\mu$ and $\Lambda$ much more larger than $m$. Rather than compute it right away, we'll replace it with a generalized dimension d. This is not for any particular purpose, but rather to introduce a famous concept later. So, the above expression becomes
@@ -593,20 +600,20 @@ Let's follow the usual convention and write this as $\phi(x;\mu)=Z^{1/2}_\phi\ph
 
 \begin{align}
 	\begin{split}
-		\langle\phi(x_1;\Lambda)...\phi(x_n;\Lambda)\rangle=\frac{\int \mathcal D\phi(x;\Lambda)[\phi(x_1;\Lambda)...\phi(x_n;\Lambda)]e^{-S[\phi(x;\Lambda),\Lambda]}}{\int \mathcal D\phi e^{-S[\phi(x;\Lambda),\Lambda]}}\\
-		=\frac{\int \mathcal D\phi_<[\phi(x_1;\Lambda)...\phi(x_n;\Lambda)]e^{-S[Z^{1/2}_\phi\phi(x;\Lambda),\mu]}}{\int \mathcal D\phi_< e^{-S[Z^{1/2}_\phi\phi(x;\Lambda),\mu]}}\\
-		=Z^{-n/2}_\phi\langle\phi(x_1;\mu)...\phi(x_n;\mu)\rangle
+		\langle\phi(x_1;\Lambda)...\phi(x_n;\Lambda)\rangle&=\frac{\int \mathcal D\phi(x;\Lambda)[\phi(x_1;\Lambda)...\phi(x_n;\Lambda)]e^{-S_\Lambda[\phi(x;\Lambda)]}}{\int \mathcal D\phi e^{-S[\phi(x;\Lambda)]}}\\
+		&=\frac{\int \mathcal D\phi_<[\phi(x_1;\Lambda)...\phi(x_n;\Lambda)]e^{-S[Z^{1/2}_\phi\phi(x;\Lambda),\mu]}}{\int \mathcal D\phi_< e^{-S[Z^{1/2}_\phi\phi(x;\Lambda),\mu]}}\\
+		&=Z^{-n/2}_\phi\langle\phi(x_1;\mu)...\phi(x_n;\mu)\rangle
 	\end{split}
 \end{align}
 if the correlation function is constructed with lower enregy field. Consider infinitesimal change of $\mu+\delta\mu$. Then
 \begin{equation}
 	Z^{-n/2}_\phi(\mu)\langle\phi(x_1;\mu)...\phi(x_n;\mu)\rangle=Z^{-n/2}_\phi(\mu+\delta \mu)\langle\phi(x_1;\mu+\delta \mu)...\phi(x_n;\mu+\delta \mu)\rangle
 \end{equation}
-Define anomalous dimension as $\gamma_\phi=-\frac{d\ln Z_\phi^{1/2}}{d\ln \mu}$. 
-This is called \textbf{anomalous} because this is responsible to kind a failure of Wald identity of scale transformation in case of correlation function.
+Define \textbf{anomalous dimension} as $\gamma_\phi=-\frac{\partial\ln Z_\phi^{1/2}}{\partial\ln \mu}$. 
+This is called \textit{anomalous} because this is responsible to kind a failure of Wald identity of scale transformation in case of correlation function.
 Subtract the LHS from the RHS, then one get the
 \begin{equation}
-	\bigg(\frac{\partial}{\partial \ln\mu} + \beta_i\frac{\partial \lambda_i}{\partial \ln\mu}  + n\lambda_\phi\bigg)\langle\phi(x_1;\mu)...\phi(x_n;\mu)\rangle=0
+	\bigg(\frac{\partial}{\partial \ln\mu} + \beta_i\frac{\partial \lambda_i}{\partial \ln\mu}  + n\gamma_\phi\bigg)\langle\phi(x_1;\mu)...\phi(x_n;\mu)\rangle=0
 \end{equation}
 And according to Polchinski's proof, the $\lambda_i$ required in this expression is exactly the same as the number of non-irrelevant operators if you are at the sufficient IR side. 
 

@@ -620,4 +620,35 @@ And according to Polchinski's proof, the $\lambda_i$ required in this expression
 It's not hard to recognize that this is our famous Callan-Symanzik equation.
 And the equation merely describes how the parameters of the equation need to be adjusted in order for our physics to be unaffected by the cutoff $\mu$ as suggested by Wilson. 
 
+\section{Mathematical proof of cutoff independence of n-point functions}
+\label{sec7}
+Although we focused on the first part and skipped second part of Polchinski’s paper, it would be necessary to understand the second part as well. So, we will define some theorems and lemmas and then show how to calculate mathematically the cutoff-independence of n-point functions.
+\begin{theorem}
+	\label{thm:}
+ 	Define the effective lagrangian L(\phi, \Lambda, \Lambda_{0}, \rho^{0}) and the relevant parameters \rho_b(\Lambda, \Lambda_0, \rho^0. Define \rho_a^0(\Lambda_R, \lambda^R, \Lambda_0) implicitly by
+ 	\begin{equation}
+		\rho_1(\Lambda, \Lambda_{0}, \rho^{0}) = 0,
+  		\rho_2(\Lambda, \Lambda_{0}, \rho^{0}) = 0,
+    		\rho_3(\Lambda, \Lambda_{0}, \rho^{0}) = \lambda^R.
+  	\end{equation}
+   	Then, the limit
+    	\begin{equation}
+    	\lim_{\Lambda_0 \to \infty} \tilde{L}(\phi, \Lambda_R, \lambda^R, \Lambda_0)=\tilde{L}(\phi, \Lambda_R, \lambda^R, \infty),
+     	and at rth order in \lambda_R,
+        \end{equation}
+	||\tilde{L}_2m^{(r)}(\Lambda_R, \Lambda_0)-\tilde{L}_2m^{(r)}(\Lambda_R, \infty)||
+ 	&<= \Lambda_R^{4-2m}(\frac{\Lambda_R}{\Lambda_0})^2)P^{2r-m}(ln(\Lambda_0/\Lambad_R)),\quad r+1-m\geq 0
+  	&= 0, \quad r+1-m<0,
+	where $P^{2r-m}$ is a polynomial of degree 2r-m whose coefficients are non-negative pure numbers.
+\end{theorem}
+\begin{lemma}
+	At order r in \Lambda^R,
+	\begin{equation}
+		\max_{p_i^2<4\Lambda^2}|\partial_{i_1,j_1}^{\mu_1}...\partial_{i_p,j_p}^{\mu_p}\Lambda^{2m-4}L_{2m}|
+  	&<=\Lambda^{-p}P^{2r-m}(ln(\Lambda_0/\Lambda_R)),\quad r+1-m\geq 0
+   	&=0, \quad r+1-m<0.
+	\end{equation}
+\end{lemma}
+Initial value of $\Lambda^{2m-4}L_{2m}$ is defined by V_\text{int} in eq (4.2), so LHS of above lemma vanishes at $\Lambda_0$ for $m\geq 3$, for $m=2, p\geq 1$, and for $m=0, p\geq 3$. The lemma is trivially true for $r=0$, as 
+
 \end{document}
